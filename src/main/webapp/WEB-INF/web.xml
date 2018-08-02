@@ -1,7 +1,52 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>AppIsOut</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.AppIsOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppIsOut</servlet-name>
+        <url-pattern>/AppIsOut</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AppIsReady</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.AppIsReady</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppIsReady</servlet-name>
+        <url-pattern>/AppIsReady</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckAppIsOnline</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.CheckAppIsOnline</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckAppIsOnline</servlet-name>
+        <url-pattern>/CheckAppIsOnline</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CheckWebIsOnline</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.CheckWebIsOnline</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckWebIsOnline</servlet-name>
+        <url-pattern>/CheckWebIsOnline</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>WebIsOut</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.WebIsOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WebIsOut</servlet-name>
+        <url-pattern>/WebIsOut</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
