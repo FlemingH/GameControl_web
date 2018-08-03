@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>游戏控制登录</title>
+    <title>控制器登录</title>
     <style>
         *{
             margin: 0;
@@ -77,7 +77,7 @@
                 alert("请补全信息");
             } else {
                 $.ajax({
-                    url:"http://127.0.0.1:8090/MainControl",
+                    url:"http://118.25.180.193:8090/MainControl",
                     type:'POST',
                     dataType: 'json',
                     async:false,
@@ -88,7 +88,7 @@
                         } else if ("WebIsOnline" == data.ajaxState) {
                             alert("账号已在其他地方登录");
                         } else {
-                            window.location.href = "http://127.0.0.1:8090/main.html?username="+username;
+                            window.location.href = "http://118.25.180.193:8090/main.html?username="+username;
                         }
                     }
                 });

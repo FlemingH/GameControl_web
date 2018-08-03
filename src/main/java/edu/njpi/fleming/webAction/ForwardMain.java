@@ -36,7 +36,7 @@ public class ForwardMain extends HttpServlet {
             out.flush();
         } else {
 
-            Message isWebOnlineMessage = Tools.httpRequest("http://127.0.0.1:8090/CheckWebIsOnline?username="+username, "GET");
+            Message isWebOnlineMessage = Tools.httpRequest("http://118.25.180.193:8090/CheckWebIsOnline?username="+username, "GET");
 
             if("ok".equals(isWebOnlineMessage.getAjaxState())){
                 message = new Message("WebIsOnline");
