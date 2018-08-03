@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏控制登录</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #topBox{
+            height: 5em;
+            width: 100%;
+            background: #3F51B5;
+        }
+        #topTitle{
+            line-height: 3em;
+            margin-left: 8em;
+            color: aliceblue;
+            font-size: 1.7em;
+        }
+        #box{
+            width: 60em;
+            height: 35em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #usernameBox{
+            margin-top: 5em;
+            width: 30em;
+            height: 8em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #passwordBox{
+            width: 30em;
+            height: 8em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #buttonBox{
+            width: 30em;
+            height: 4em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #username{
+            margin-top: 2em;
+            width: 8em;
+            border: none;
+            border-bottom: 2px solid gray;
+            font-size: 1.7em;
+            margin-left: 4.5em;
+        }
+        #password{
+            margin-top: 2em;
+            width: 8em;
+            border: none;
+            border-bottom: 2px solid gray;
+            font-size: 1.7em;
+            margin-left: 4.5em;
+        }
+        #submitButton{
+            margin-top: 4em;
+            width: 5em;
+            height: 2em;
+            margin-left: 14em;
+        }
+    </style>
+</head>
+<body>
+    <div id="topBox">
+        <a id="topTitle">GC web</a>
+    </div>
+    <div id="box">
+        <div id="usernameBox">
+            <input type="text" id="username" name="username" placeholder="username">
+        </div>
+        <div id="passwordBox">
+            <input type="password" id="password" name="password" placeholder="password">
+        </div>
+        <div id="buttonBox">
+            <input type="button" id="submitButton" value="登录">
+        </div>
+    </div>
+</body>
+</html>
