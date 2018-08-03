@@ -3,6 +3,7 @@ package edu.njpi.fleming.server;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 import javax.websocket.Session;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
  * 在工程发布的同时创建：OnlineSocketMap、ControlSocketWebMap、AppApplication、WebApplication
  * 用于保存username、Session
  */
+@WebListener
 public class ControlServer implements ServletContextListener {
 
     private static ServletContext AppApplication;

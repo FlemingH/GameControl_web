@@ -7,4 +7,9 @@ public class Message {
     public Message(String ajaxState) {
         this.ajaxState = ajaxState;
     }
+
+    public String getAjaxState() {
+        return ajaxState;
+    }
+
 }
