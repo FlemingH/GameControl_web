@@ -1,6 +1,7 @@
-//告诉服务器自己上线了、
+// 告诉服务器自己上线了、
 // 改按钮都不可点击、
 // 检查app登录情况、对面在线：改标志，改按钮
+// 实现启动连接和关闭连接的按钮点击事件
 function GetQueryString(name)
 {
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -32,4 +33,4 @@ $.ajax({
             document.getElementById("openConn").disable = "false";
         }
     }
-})
+});
