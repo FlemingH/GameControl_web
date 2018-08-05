@@ -18,8 +18,13 @@ public class ControlServer implements ServletContextListener {
 
     private static ServletContext AppApplication;
     private static ServletContext WebApplication;
-    private static Map<String, Session> OnlineSocketMap;
+    //向Web发送信息的地址
+    private static Map<String, Session> WebOnlineSocketMap;
+    //向App发送信息的地址
+    private static Map<String, Session> AppOnlineSocketMap;
+    //用于存储app控制socket的发送源
     private static Map<String, Session> ControlSocketWebMap;
+
 
     public static ServletContext getAppApplication() {
         return AppApplication;
@@ -29,8 +34,12 @@ public class ControlServer implements ServletContextListener {
         return WebApplication;
     }
 
-    public static Map<String, Session> getOnlineSocketMap() {
-        return OnlineSocketMap;
+    public static Map<String, Session> getWebOnlineSocketMap() {
+        return WebOnlineSocketMap;
+    }
+
+    public static Map<String, Session> getAppOnlineSocketMap() {
+        return AppOnlineSocketMap;
     }
 
     public static Map<String, Session> getControlSocketWebMap() {
@@ -42,7 +51,8 @@ public class ControlServer implements ServletContextListener {
 
         AppApplication = servletContextEvent.getServletContext();
         WebApplication = servletContextEvent.getServletContext();
-        OnlineSocketMap = new HashMap<>(16);
+        WebOnlineSocketMap = new HashMap<>(16);
+        AppOnlineSocketMap = new HashMap<>(16);
         ControlSocketWebMap = new HashMap<>(16);
 
     }
@@ -52,7 +62,8 @@ public class ControlServer implements ServletContextListener {
 
         AppApplication = null;
         WebApplication = null;
-        OnlineSocketMap = null;
+        WebOnlineSocketMap = null;
+        AppOnlineSocketMap = null;
         ControlSocketWebMap = null;
 
     }
