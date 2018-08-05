@@ -1,4 +1,5 @@
-//将信息显示在标题
+//用于处理在线信息：接收对面在线的信息、发送我在线的信息
+//用于处理控制信息：只接受对面的控制信息
 function setMessageInnerHtml(message) {
     document.getElementById("topTitle").innerHTML = message;
 }
@@ -14,8 +15,28 @@ if('WebSocket' in window) {
 
 websocket.onerror = function () {
     setMessageInnerHtml("连接错误");
-}
+};
 
 websocket.onopen = function () {
     setMessageInnerHtml("连接成功");
-}
+};
+
+websocket.onmessage = function (event) {
+
+    debugger;
+    var messageJson = eval("("+event.data+")");
+
+    //接收到对面在线的情况：改标志、改开始按钮可以点击
+    if(messageJson.messageType == "AppIsOnline"){
+        document.getElementById("appState").className = "OnlineStateBox_Online";
+        document.getElementById("openConn").disable = "false";
+    }
+
+    //收到对面下线的情况：改标志、改开始按钮不可点击、改结束按钮也不可点击
+    if(messageJson.messageType == "AppIsOffline"){
+        document.getElementById("appState").className = "OnlineStateBox_Offline";
+        document.getElementById("openConn").disable = "true";
+        document.getElementById("closeConn").disable = "true";
+    }
+
+};

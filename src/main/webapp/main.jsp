@@ -98,7 +98,7 @@
         </div>
         <div id="appOnlineBox">
             <div class="OnlineTitleBox">App端</div>
-            <div class="OnlineStateBox_Offline">未在线</div>
+            <div id="appState" class="OnlineStateBox_Offline">未在线</div>
         </div>
         <div id="buttonBox">
             <input type="button" id="openConn" value="开启控制">
