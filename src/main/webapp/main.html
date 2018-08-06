@@ -71,18 +71,6 @@
             font-size: 1.2em;
             color: gray;
         }
-        #openConn{
-            float: left;
-            margin-left: 8em;
-            width: 8em;
-            margin-top: 5em;
-        }
-        #closeConn{
-            float: right;
-            margin-right: 8em;
-            width: 8em;
-            margin-top: 5em;
-        }
     </style>
     <script type="application/javascript" src="js/jquery-3.3.1.min.js"></script>
 </head>
@@ -100,8 +88,6 @@
             <div id="appState" class="OnlineStateBox_Offline">未在线</div>
         </div>
         <div id="buttonBox">
-            <input type="button" id="openConn" value="开启控制" onclick="openConnOnClick()">
-            <input type="button" id="closeConn" value="关闭控制" onclick="closeConnOnClick()">
         </div>
     </div>
     <script type="application/javascript" src="js/WebIsReady.js"></script>
@@ -115,17 +101,10 @@
         var websocket = null;
         var username = GetQueryString("username");
 
-        function openConn4Socket() {
-            if('WebSocket' in window) {
-                websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
-            } else {
-                alert("当前浏览器不支持WebSocket");
-            }
-        }
-
-        function closeConn4Socket() {
-            websocket.close();
-            setMessageInnerHtml("连接关闭")
+        if('WebSocket' in window) {
+            websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
+        } else {
+            alert("当前浏览器不支持WebSocket");
         }
 
         websocket.onerror = function () {
@@ -136,27 +115,18 @@
             setMessageInnerHtml("连接成功");
         };
 
-        //退出时断开连接
-        window.onbeforeunload = function () {
-            websocket.close();
-            return "退出将会断开连接";
-        };
-
         websocket.onmessage = function (event) {
             debugger;
             var messageJson = eval("("+event.data+")");
 
-            //接收到对面在线的情况：改标志、改开始按钮可以点击
+            //收到对面上线的情况：改标志
             if("AppIsOnline" == messageJson.messageType){
                 document.getElementById("appState").className = "OnlineStateBox_Online";
-                document.getElementById("openConn").disable = "false";
             }
 
-            //收到对面下线的情况：改标志、改开始按钮不可点击、改结束按钮也不可点击
+            //收到对面下线的情况：改标志
             if("AppIsOffline" == messageJson.messageType){
                 document.getElementById("appState").className = "OnlineStateBox_Offline";
-                document.getElementById("openConn").disable = "true";
-                document.getElementById("closeConn").disable = "true";
             }
 
             //w按下事件
@@ -346,6 +316,25 @@
             }
 
         };
+
+        websocket.onclose = function () {
+            var socketMessage = {"messageType":"webIsOffline", "data":username};
+            websocket.send(socketMessage);
+        };
+
+        //退出浏览器时断开socket连接：同时向服务器发送下线
+        window.onbeforeunload = function () {
+            websocket.close();
+            $.ajax({
+                url:"http://118.25.180.193:8090/WebIsOut?username="+username,
+                type:"GET",
+                dataType: 'json',
+                async:false
+            });
+            return "退出将会断开连接";
+        };
+
     </script>
+    <script type="application/javascript" src="js/TellAppIfIShould.js"></script>
 </body>
 </html>
