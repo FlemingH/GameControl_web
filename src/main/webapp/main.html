@@ -148,22 +148,38 @@
 
             //w按下事件
             if("wButtonDown" == messageJson.messageType){
-
+                $.ajax({
+                    url:'jsp/W.jsp',
+                    type:'GET',
+                    dataType:'jsp'
+                });
             }
 
             //w松开事件
             if("wButtonUp" == messageJson.messageType){
-
+                $.ajax({
+                    url:'jsp/SW.jsp',
+                    type:'GET',
+                    dataType:'jsp'
+                });
             }
 
             //s键按下事件
             if("sButtonDown" == messageJson.messageType){
-
+                $.ajax({
+                    url:'jsp/S.jsp',
+                    type:'GET',
+                    dataType:'jsp'
+                });
             }
 
             //s键松开事件
             if("sButtonUp" == messageJson.messageType){
-
+                $.ajax({
+                    url:'jsp/SS.jsp',
+                    type:'GET',
+                    dataType:'jsp'
+                });
             }
 
             //方向改变信息，内部在进行判断值的大小
@@ -172,44 +188,144 @@
                 //从左到右-10~9
                 switch (parseInt(messageJson.data)) {
                     case -10:
+                        $.ajax({
+                            url:'jsp/L9.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -9:
+                        $.ajax({
+                            url:'jsp/L9.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -8:
+                        $.ajax({
+                            url:'jsp/L8.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -7:
+                        $.ajax({
+                            url:'jsp/L7.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -6:
+                        $.ajax({
+                            url:'jsp/L6.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -5:
+                        $.ajax({
+                            url:'jsp/L5.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -4:
+                        $.ajax({
+                            url:'jsp/L4.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -3:
+                        $.ajax({
+                            url:'jsp/L3.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -2:
+                        $.ajax({
+                            url:'jsp/L2.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case -1:
+                        $.ajax({
+                            url:'jsp/L1.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 0:
+                        $.ajax({
+                            url:'jsp/D0.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 1:
+                        $.ajax({
+                            url:'jsp/R1.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 2:
+                        $.ajax({
+                            url:'jsp/R2.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 3:
+                        $.ajax({
+                            url:'jsp/R3.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 4:
+                        $.ajax({
+                            url:'jsp/R4.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 5:
+                        $.ajax({
+                            url:'jsp/R5.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 6:
+                        $.ajax({
+                            url:'jsp/R6.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 7:
+                        $.ajax({
+                            url:'jsp/R7.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 8:
+                        $.ajax({
+                            url:'jsp/R8.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     case 9:
+                        $.ajax({
+                            url:'jsp/R9.jsp',
+                            type:'GET',
+                            dataType:'jsp'
+                        });
                         break;
                     default:
                         break;
