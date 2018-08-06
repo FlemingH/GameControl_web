@@ -7,7 +7,7 @@ public class L1 extends Thread{
 
     private static boolean isL1Stop;
 
-    private static void setIsL1Stop(boolean newStop){
+    public static void setIsL1Stop(boolean newStop){
         isL1Stop = newStop;
     }
 
