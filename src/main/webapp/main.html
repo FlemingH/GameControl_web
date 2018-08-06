@@ -100,8 +100,8 @@
             <div id="appState" class="OnlineStateBox_Offline">未在线</div>
         </div>
         <div id="buttonBox">
-            <input type="button" id="openConn" value="开启控制">
-            <input type="button" id="closeConn" value="关闭控制">
+            <input type="button" id="openConn" value="开启控制" onclick="openConnOnClick()">
+            <input type="button" id="closeConn" value="关闭控制" onclick="closeConnOnClick()">
         </div>
     </div>
     <script type="application/javascript" src="js/WebIsReady.js"></script>
@@ -115,10 +115,17 @@
         var websocket = null;
         var username = GetQueryString("username");
 
-        if('WebSocket' in window) {
-            websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
-        } else {
-            alert("当前浏览器不支持WebSocket");
+        function openConn4Socket() {
+            if('WebSocket' in window) {
+                websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
+            } else {
+                alert("当前浏览器不支持WebSocket");
+            }
+        }
+
+        function closeConn4Socket() {
+            websocket.close();
+            setMessageInnerHtml("连接关闭")
         }
 
         websocket.onerror = function () {
@@ -127,6 +134,12 @@
 
         websocket.onopen = function () {
             setMessageInnerHtml("连接成功");
+        };
+
+        //退出时断开连接
+        window.onbeforeunload = function () {
+            websocket.close();
+            return "退出将会断开连接";
         };
 
         websocket.onmessage = function (event) {

@@ -34,3 +34,17 @@ $.ajax({
         }
     }
 });
+
+//连接开启按钮点击事件：改自己为不可点击、改关闭连接可以点击、连接开启
+function openConnOnClick() {
+    document.getElementById("openConn").disable = "true";
+    document.getElementById("closeConn").disable = "false";
+    openConn4Socket();
+}
+
+//连接关闭按钮点击事件：改自己为不可点击，改开启连接可以点击、连接关闭
+function closeConnOnClick() {
+    document.getElementById("closeConn").disable = "true";
+    document.getElementById("openConn").disable = "true";
+    closeConn4Socket();
+}
