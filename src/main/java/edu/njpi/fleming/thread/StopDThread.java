@@ -23,7 +23,7 @@ public class StopDThread{
         R7.setIsR7Stop(true);
         R8.setIsR8Stop(true);
         R9.setIsR9Stop(true);
-        
+
     }
 
 }
