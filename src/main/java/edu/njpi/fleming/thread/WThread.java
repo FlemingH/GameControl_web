@@ -18,7 +18,7 @@ public class WThread extends Thread{
             e.printStackTrace();
         }
 
-        robot.setAutoDelay(50);
+        robot.setAutoDelay(1000);
 
         while (!isWStop){
             robot.keyPress(KeyEvent.VK_UP);

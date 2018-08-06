@@ -18,7 +18,7 @@ public class SThread extends Thread{
         } catch (AWTException e) {
             e.printStackTrace();
         }
-        robot.setAutoDelay(50);
+        robot.setAutoDelay(1000);
 
         while (!isSStop){
             robot.keyPress(KeyEvent.VK_DOWN);
