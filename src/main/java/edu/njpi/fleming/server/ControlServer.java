@@ -1,6 +1,5 @@
 package edu.njpi.fleming.server;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -16,8 +15,8 @@ import java.util.Map;
 @WebListener
 public class ControlServer implements ServletContextListener {
 
-    private static ServletContext AppApplication;
-    private static ServletContext WebApplication;
+    private static Map<String, String> AppOnlineMap;
+    private static Map<String, String> WebOnlineMap;
     //向Web发送信息的地址
     private static Map<String, Session> WebOnlineSocketMap;
     //向App发送信息的地址
@@ -25,14 +24,9 @@ public class ControlServer implements ServletContextListener {
     //用于存储app控制socket的发送源
     private static Map<String, Session> ControlSocketWebMap;
 
+    public static Map<String, String> getAppOnlineMap() { return AppOnlineMap; }
 
-    public static ServletContext getAppApplication() {
-        return AppApplication;
-    }
-
-    public static ServletContext getWebApplication() {
-        return WebApplication;
-    }
+    public static Map<String, String> getWebOnlineMap() { return WebOnlineMap; }
 
     public static Map<String, Session> getWebOnlineSocketMap() {
         return WebOnlineSocketMap;
@@ -49,8 +43,8 @@ public class ControlServer implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
-        AppApplication = servletContextEvent.getServletContext();
-        WebApplication = servletContextEvent.getServletContext();
+        AppOnlineMap = new HashMap<>(16);
+        WebOnlineMap = new HashMap<>(16);
         WebOnlineSocketMap = new HashMap<>(16);
         AppOnlineSocketMap = new HashMap<>(16);
         ControlSocketWebMap = new HashMap<>(16);
@@ -60,8 +54,8 @@ public class ControlServer implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
-        AppApplication = null;
-        WebApplication = null;
+        AppOnlineMap = null;
+        WebOnlineMap = null;
         WebOnlineSocketMap = null;
         AppOnlineSocketMap = null;
         ControlSocketWebMap = null;

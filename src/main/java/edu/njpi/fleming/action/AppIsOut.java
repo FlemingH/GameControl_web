@@ -2,10 +2,10 @@ package edu.njpi.fleming.action;
 
 import edu.njpi.fleming.server.ControlServer;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 public class AppIsOut extends HttpServlet {
 
@@ -13,8 +13,8 @@ public class AppIsOut extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
         String username = request.getParameter("username");
-        ServletContext appApplication = ControlServer.getAppApplication();
-        appApplication.removeAttribute(username);
+        Map<String, String> appOnlineMap = ControlServer.getAppOnlineMap();
+        appOnlineMap.remove(username);
         System.out.println(username+"退出app");
 
     }

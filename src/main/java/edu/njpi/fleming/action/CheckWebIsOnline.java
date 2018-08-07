@@ -4,24 +4,24 @@ import com.google.gson.Gson;
 import edu.njpi.fleming.action.form.Message;
 import edu.njpi.fleming.server.ControlServer;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Map;
 
 public class CheckWebIsOnline extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String username = request.getParameter("username");
-        ServletContext webApplication = ControlServer.getWebApplication();
+        Map<String, String> webOnlineMap = ControlServer.getWebOnlineMap();
 
         Gson gson = new Gson();
         Message message;
 
-        if(webApplication.getAttribute(username) != null) {
+        if(!"".equals(webOnlineMap.get(username))) {
             message = new Message("ok");
             String json = gson.toJson(message);
             response.setContentType("application/json; charset=utf-8");
