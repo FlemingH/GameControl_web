@@ -188,6 +188,8 @@ public class SocketHandle {
     }
 
     @OnError
-    public void onError() { System.out.println("socket发生错误"); }
+    public void onError(Throwable error) {
+        error.printStackTrace();
+    }
 
 }
