@@ -39,7 +39,16 @@
         <servlet-name>CheckWebIsOnline</servlet-name>
         <url-pattern>/CheckWebIsOnline</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>WebIsReady</servlet-name>
+        <servlet-class>edu.njpi.fleming.action.WebIsReady</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WebIsReady</servlet-name>
+        <url-pattern>/WebIsReady</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>WebIsOut</servlet-name>
         <servlet-class>edu.njpi.fleming.action.WebIsOut</servlet-class>
