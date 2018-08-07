@@ -21,7 +21,7 @@ public class CheckAppIsOnline extends HttpServlet {
         Gson gson = new Gson();
         Message message;
 
-        if(!"".equals(appOnlineMap.get(username))){
+        if(appOnlineMap.containsKey(username)){
             message = new Message("ok");
             String json = gson.toJson(message);
             response.setContentType("application/json; charset=utf-8");

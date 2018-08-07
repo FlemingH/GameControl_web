@@ -21,7 +21,7 @@ public class CheckWebIsOnline extends HttpServlet {
         Gson gson = new Gson();
         Message message;
 
-        if(!"".equals(webOnlineMap.get(username))) {
+        if(webOnlineMap.containsKey(username)) {
             message = new Message("ok");
             String json = gson.toJson(message);
             response.setContentType("application/json; charset=utf-8");
