@@ -1,10 +1,10 @@
 package edu.njpi.fleming.socket;
 
+import com.google.gson.Gson;
+import edu.njpi.fleming.action.form.SocketMessage;
 import edu.njpi.fleming.server.ControlServer;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
+import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.Map;
@@ -68,6 +68,126 @@ public class SocketHandle {
         }
     }
 
+    @OnMessage
+    public void onMessage(String message, @PathParam(value = "username") String username){
 
+        Gson gson = new Gson();
+        SocketMessage socketMessage = gson.fromJson(message, SocketMessage.class);
+        String messageType = socketMessage.getMessageType();
+
+        SocketMessage sendMessage = null;
+
+        //直接在webMap里寻找发送的地址；找到就发送
+        if("AppIsOnline".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("AppIsOnline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //处理同AppIsOnline
+        if("AppIsOffline".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("AppIsOffline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //直接在appMap里寻找发送的地址；找到就发送
+        if("webIsOnline".equals(messageType)){
+            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("webIsOnline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //处理同webIsOnline
+        if("webIsOffline".equals(messageType)){
+            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("webIsOffline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //前进键按下
+        if("wButtonDown".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("wButtonDown");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //前进键松开
+        if("wButtonUp".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("wButtonUp");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //后退键按下
+        if("sButtonDown".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("sButtonDown");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //后退键松开
+        if("sButtonUp".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("sButtonUp");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+        //方向改变
+        if("dChange".equals(messageType)){
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("dChange");
+                    sendMessage.setData(socketMessage.getData());
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+        }
+
+    }
+
+    @OnError
+    public void onError() { System.out.println("socket发生错误"); }
 
 }
