@@ -88,7 +88,7 @@
         }
 
         var username = GetQueryString("username");
-        
+
         var websocket = null;
         if('WebSocket' in window) {
             websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
@@ -321,6 +321,24 @@
             });
             return "退出将会断开连接";
         };
+
+        websocket.addEventListener('open', function () {
+            //检查App是否在线：在线的话则发送socket，告诉它web上线了，同时改标志和按钮
+            $.ajax({
+                url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
+                type:"GET",
+                dataType: 'json',
+                success:function (data) {
+                    //对面在线的情况
+                    if("ok" == data.ajaxState){
+                        document.getElementById("appState").className = "OnlineStateBox_Online";
+                        document.getElementById("appState").innerText = "在线";
+                        var socketMessage = {"messageType":"webIsOnline", "data":username};
+                        websocket.send(JSON.stringify(socketMessage));
+                    }
+                }
+            });
+        });
     </script>
 </head>
 <body>
@@ -340,30 +358,12 @@
         </div>
     </div>
     <script type="application/javascript">
-
         // 告诉服务器自己上线了
         var username = GetQueryString("username");
-
         $.ajax({
             url:"http://118.25.180.193:8090/WebIsReady?username="+username,
             type:"GET",
             dataType: 'json',
-        });
-
-        //检查App是否在线：在线的话则发送socket，告诉它web上线了，同时改标志和按钮
-        $.ajax({
-            url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
-            type:"GET",
-            dataType: 'json',
-            success:function (data) {
-                //对面在线的情况
-                if("ok" == data.ajaxState){
-                    document.getElementById("appState").className = "OnlineStateBox_Online";
-                    document.getElementById("appState").innerText = "在线";
-                    var socketMessage = {"messageType":"webIsOnline", "data":username};
-                    websocket.send(JSON.stringify(socketMessage));
-                }
-            }
         });
     </script>
 </body>
