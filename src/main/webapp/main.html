@@ -73,41 +73,7 @@
         }
     </style>
     <script type="application/javascript" src="js/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-    <div id="topBox">
-        <a id="topTitle">GC web</a>
-    </div>
-    <div id="box">
-        <div id="webOnlineBox">
-            <div class="OnlineTitleBox">Web端</div>
-            <div class="OnlineStateBox_Online">在线</div>
-        </div>
-        <div id="appOnlineBox">
-            <div class="OnlineTitleBox">App端</div>
-            <div id="appState" class="OnlineStateBox_Offline">未在线</div>
-        </div>
-        <div id="buttonBox">
-        </div>
-    </div>
-    <script type="application/javascript">
-
-        // 告诉服务器自己上线了
-        function GetQueryString(name)
-        {
-            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if(r!=null)return  unescape(r[2]); return null;
-        }
-
-        var username = GetQueryString("username");
-
-        $.ajax({
-            url:"http://118.25.180.193:8090/WebIsReady?username="+username,
-            type:"GET",
-            dataType: 'json',
-        });
-
+    <script>
         //用于处理在线信息：接收对面在线的信息、发送我在线的信息
         //用于处理控制信息：只接受对面的控制信息：w按下松开、s按下松开和左右个9个，0算一个，-10=-9：一共：24种信息
         function setMessageInnerHtml(message) {
@@ -346,6 +312,41 @@
             });
             return "退出将会断开连接";
         };
+    </script>
+</head>
+<body>
+    <div id="topBox">
+        <a id="topTitle">GC web</a>
+    </div>
+    <div id="box">
+        <div id="webOnlineBox">
+            <div class="OnlineTitleBox">Web端</div>
+            <div class="OnlineStateBox_Online">在线</div>
+        </div>
+        <div id="appOnlineBox">
+            <div class="OnlineTitleBox">App端</div>
+            <div id="appState" class="OnlineStateBox_Offline">未在线</div>
+        </div>
+        <div id="buttonBox">
+        </div>
+    </div>
+    <script type="application/javascript">
+
+        // 告诉服务器自己上线了
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+        var username = GetQueryString("username");
+
+        $.ajax({
+            url:"http://118.25.180.193:8090/WebIsReady?username="+username,
+            type:"GET",
+            dataType: 'json',
+        });
 
         //检查App是否在线：在线的话则发送socket，告诉它web上线了，同时改标志和按钮
         $.ajax({
