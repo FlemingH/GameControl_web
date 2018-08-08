@@ -319,7 +319,7 @@
 
         websocket.onclose = function () {
             var socketMessage = {"messageType":"webIsOffline", "data":username};
-            websocket.send(socketMessage);
+            websocket.send(JSON.stringify(socketMessage));
         };
 
         //退出浏览器时断开socket连接：同时向服务器发送下线
@@ -329,7 +329,6 @@
                 url:"http://118.25.180.193:8090/WebIsOut?username="+username,
                 type:"GET",
                 dataType: 'json',
-                async:false
             });
             return "退出将会断开连接";
         };

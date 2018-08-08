@@ -12,5 +12,4 @@ $.ajax({
     url:"http://118.25.180.193:8090/WebIsReady?username="+username,
     type:"GET",
     dataType: 'json',
-    async:false
 });
