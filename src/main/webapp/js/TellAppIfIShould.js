@@ -10,6 +10,7 @@ $.ajax({
         //对面在线的情况
         if("ok" == data.ajaxState){
             document.getElementById("appState").className = "OnlineStateBox_Online";
+            document.getElementById("appState").innerText = "在线";
             var socketMessage = {"messageType":"webIsOnline", "data":username};
             websocket.send(socketMessage);
         }
