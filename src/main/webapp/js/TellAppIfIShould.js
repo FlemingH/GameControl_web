@@ -2,7 +2,7 @@
 var username = GetQueryString("username");
 
 $.ajax({
-    url:"http://118.25.180.193:8090/CheckAppIsOnlie?username="+username,
+    url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
     type:"GET",
     dataType: 'json',
     async:false,
