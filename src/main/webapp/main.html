@@ -90,8 +90,24 @@
         <div id="buttonBox">
         </div>
     </div>
-    <script type="application/javascript" src="js/WebIsReady.js"></script>
     <script type="application/javascript">
+
+        // 告诉服务器自己上线了
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+        var username = GetQueryString("username");
+
+        $.ajax({
+            url:"http://118.25.180.193:8090/WebIsReady?username="+username,
+            type:"GET",
+            dataType: 'json',
+        });
+
         //用于处理在线信息：接收对面在线的信息、发送我在线的信息
         //用于处理控制信息：只接受对面的控制信息：w按下松开、s按下松开和左右个9个，0算一个，-10=-9：一共：24种信息
         function setMessageInnerHtml(message) {
@@ -99,8 +115,6 @@
         }
 
         var websocket = null;
-        var username = GetQueryString("username");
-
         if('WebSocket' in window) {
             websocket = new WebSocket("ws://118.25.180.193:8090/SocketHandle/web/"+username);
         } else {
@@ -333,7 +347,21 @@
             return "退出将会断开连接";
         };
 
+        //检查App是否在线：在线的话则发送socket，告诉它web上线了，同时改标志和按钮
+        $.ajax({
+            url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
+            type:"GET",
+            dataType: 'json',
+            success:function (data) {
+                //对面在线的情况
+                if("ok" == data.ajaxState){
+                    document.getElementById("appState").className = "OnlineStateBox_Online";
+                    document.getElementById("appState").innerText = "在线";
+                    var socketMessage = {"messageType":"webIsOnline", "data":username};
+                    websocket.send(JSON.stringify(socketMessage));
+                }
+            }
+        });
     </script>
-    <script type="application/javascript" src="js/TellAppIfIShould.js"></script>
 </body>
 </html>

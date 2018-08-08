@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81cd7bee-278c-4ae3-a8cb-6675b40fa882" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsReady.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsReady.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsOut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsReady.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsReady.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.html" afterDir="false" />
@@ -20,73 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebIsReady.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="331" column="15" lean-forward="true" selection-start-line="331" selection-start-column="15" selection-end-line="331" selection-end-column="15" />
+            <state relative-caret-position="508">
+              <caret line="365" column="7" lean-forward="true" selection-start-line="365" selection-start-column="7" selection-end-line="365" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebIsOut.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsOut.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebIsReady.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsReady.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="27" column="46" lean-forward="true" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppIsOut.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsOut.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppIsReady.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsReady.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckWebIsOnline.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/CheckWebIsOnline.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="30" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3736#3900#0" />
+                <element signature="e#3976#4141#0" />
+                <element signature="e#4220#4384#0" />
+                <element signature="e#4461#4626#0" />
+                <element signature="e#4713#9880#0" />
               </folding>
             </state>
           </provider>
@@ -94,20 +41,7 @@
       </file>
       <file leaf-file-name="TellAppIfIShould.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebIsReady.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -122,13 +56,14 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/server/ControlServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/CheckWebIsOnline.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/CheckAppIsOnline.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/main.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsOut.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsReady.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsOut.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/AppIsReady.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/main.html" />
       </list>
     </option>
   </component>
@@ -207,6 +142,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fleming" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GameControl_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GameControl_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fleming" type="462c0819:PsiDirectoryNode" />
+              <item name="socket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GameControl_web" type="b2602c69:ProjectViewProjectNode" />
@@ -330,12 +274,12 @@
       <workItem from="1533609191435" duration="10000" />
       <workItem from="1533609257785" duration="2855000" />
       <workItem from="1533641651017" duration="5695000" />
-      <workItem from="1533718089654" duration="2251000" />
+      <workItem from="1533718089654" duration="3873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10811000" />
+    <option name="totallyTimeSpent" value="12433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -425,7 +369,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/webAction/ForwardLogin.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -452,30 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="331" column="15" lean-forward="true" selection-start-line="331" selection-start-column="15" selection-end-line="331" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -525,6 +451,34 @@
           <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="365" column="7" lean-forward="true" selection-start-line="365" selection-start-column="7" selection-end-line="365" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#3736#3900#0" />
+            <element signature="e#3976#4141#0" />
+            <element signature="e#4220#4384#0" />
+            <element signature="e#4461#4626#0" />
+            <element signature="e#4713#9880#0" />
           </folding>
         </state>
       </provider>
