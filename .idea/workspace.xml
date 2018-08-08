@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81cd7bee-278c-4ae3-a8cb-6675b40fa882" name="Default" comment="" />
+    <list default="true" id="81cd7bee-278c-4ae3-a8cb-6675b40fa882" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,24 +14,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1372">
-              <caret line="365" column="7" lean-forward="true" selection-start-line="365" selection-start-column="7" selection-end-line="365" selection-end-column="7" />
+            <state relative-caret-position="-742">
+              <caret line="90" column="8" lean-forward="true" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#3736#3900#0" />
-                <element signature="e#3976#4141#0" />
-                <element signature="e#4220#4384#0" />
-                <element signature="e#4461#4626#0" />
-                <element signature="e#4713#9880#0" />
+                <element signature="e#2723#2827#0" />
+                <element signature="e#2914#3019#0" />
+                <element signature="e#3097#3261#0" />
+                <element signature="e#3337#3502#0" />
+                <element signature="e#3581#3745#0" />
+                <element signature="e#3822#3987#0" />
+                <element signature="e#4074#9241#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketHandle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SocketHandle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-30">
@@ -260,15 +264,15 @@
       <workItem from="1533609191435" duration="10000" />
       <workItem from="1533609257785" duration="2855000" />
       <workItem from="1533641651017" duration="5695000" />
-      <workItem from="1533718089654" duration="5272000" />
+      <workItem from="1533718089654" duration="5836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13832000" />
+    <option name="totallyTimeSpent" value="14396000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -447,25 +451,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1372">
-          <caret line="365" column="7" lean-forward="true" selection-start-line="365" selection-start-column="7" selection-end-line="365" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#3736#3900#0" />
-            <element signature="e#3976#4141#0" />
-            <element signature="e#4220#4384#0" />
-            <element signature="e#4461#4626#0" />
-            <element signature="e#4713#9880#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-742">
+          <caret line="90" column="8" lean-forward="true" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#2723#2827#0" />
+            <element signature="e#2914#3019#0" />
+            <element signature="e#3097#3261#0" />
+            <element signature="e#3337#3502#0" />
+            <element signature="e#3581#3745#0" />
+            <element signature="e#3822#3987#0" />
+            <element signature="e#4074#9241#0" />
+          </folding>
         </state>
       </provider>
     </entry>
