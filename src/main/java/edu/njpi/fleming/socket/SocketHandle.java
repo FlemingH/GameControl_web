@@ -3,6 +3,7 @@ package edu.njpi.fleming.socket;
 import com.google.gson.Gson;
 import edu.njpi.fleming.action.form.SocketMessage;
 import edu.njpi.fleming.server.ControlServer;
+import edu.njpi.fleming.util.Tools;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
@@ -86,6 +87,8 @@ public class SocketHandle {
                 }
             }
 
+            Tools.httpRequest("http://118.25.180.193:8090/AppIsOut?username="+username,"GET");
+
             System.out.println(username+"-app-断开socket连接");
             appOnlineSocketMap.remove(username);
 
@@ -101,6 +104,8 @@ public class SocketHandle {
                     break;
                 }
             }
+
+            Tools.httpRequest("http://118.25.180.193:8090/WebIsOut?username="+username,"GET");
 
             System.out.println(username+"-web-断开socket连接");
             webOnlineSocketMap.remove(username);
