@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81cd7bee-278c-4ae3-a8cb-6675b40fa882" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.html" afterDir="false" />
-    </list>
+    <list default="true" id="81cd7bee-278c-4ae3-a8cb-6675b40fa882" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,13 +12,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="119" column="68" selection-start-line="119" selection-start-column="68" selection-end-line="119" selection-end-column="68" />
+            <state relative-caret-position="2376">
+              <caret line="344" column="29" lean-forward="true" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="e#3025#3129#0" />
+                <element signature="e#3216#3321#0" />
                 <element signature="e#3399#3563#0" />
                 <element signature="e#3639#3804#0" />
                 <element signature="e#3883#4047#0" />
@@ -45,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketHandle.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SocketHandle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-888">
+            <state relative-caret-position="192">
               <caret line="75" column="90" selection-start-line="75" selection-start-column="90" selection-end-line="75" selection-end-column="90" />
             </state>
           </provider>
@@ -277,12 +275,12 @@
       <workItem from="1533609257785" duration="2855000" />
       <workItem from="1533641651017" duration="5695000" />
       <workItem from="1533718089654" duration="8385000" />
-      <workItem from="1533775642525" duration="1374000" />
+      <workItem from="1533775642525" duration="2320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18319000" />
+    <option name="totallyTimeSpent" value="19265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -335,6 +333,8 @@
           <caret line="359" column="42" lean-forward="true" selection-start-line="359" selection-start-column="42" selection-end-line="359" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#3025#3129#0" />
+            <element signature="e#3216#3321#0" />
             <element signature="e#3399#3563#0" />
             <element signature="e#3639#3804#0" />
             <element signature="e#3883#4047#0" />
@@ -460,6 +460,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/WebIsReady.js" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/TellAppIfIShould.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="344" column="29" lean-forward="true" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#3025#3129#0" />
+            <element signature="e#3216#3321#0" />
+            <element signature="e#3399#3563#0" />
+            <element signature="e#3639#3804#0" />
+            <element signature="e#3883#4047#0" />
+            <element signature="e#4124#4289#0" />
+            <element signature="e#4376#9543#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/action/WebIsOut.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -472,23 +489,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/njpi/fleming/socket/SocketHandle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-888">
+        <state relative-caret-position="192">
           <caret line="75" column="90" selection-start-line="75" selection-start-column="90" selection-end-line="75" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="119" column="68" selection-start-line="119" selection-start-column="68" selection-end-line="119" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#3399#3563#0" />
-            <element signature="e#3639#3804#0" />
-            <element signature="e#3883#4047#0" />
-            <element signature="e#4124#4289#0" />
-            <element signature="e#4376#9543#0" />
-          </folding>
         </state>
       </provider>
     </entry>

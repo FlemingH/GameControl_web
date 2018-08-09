@@ -314,7 +314,7 @@
             $.ajax({
                 url:"http://118.25.180.193:8090/WebIsOut?username="+username,
                 type:"GET",
-                dataType: 'json',
+                dataType: 'json'
             });
             return "退出将会断开连接";
         };
@@ -342,7 +342,7 @@
         $.ajax({
             url:"http://118.25.180.193:8090/WebIsReady?username="+username,
             type:"GET",
-            dataType: 'json',
+            dataType: 'json'
         });
 
         //检查App是否在线：在线就改标志
