@@ -111,11 +111,13 @@
             //收到对面上线的情况：改标志
             if("AppIsOnline" == messageJson.messageType){
                 document.getElementById("appState").className = "OnlineStateBox_Online";
+                document.getElementById("appState").innerText = "在线";
             }
 
             //收到对面下线的情况：改标志
             if("AppIsOffline" == messageJson.messageType){
                 document.getElementById("appState").className = "OnlineStateBox_Offline";
+                document.getElementById("appState").innerText = "未在线";
             }
 
             //w按下事件
@@ -306,11 +308,6 @@
 
         };
 
-        websocket.onclose = function () {
-            var socketMessage = {"messageType":"webIsOffline", "data":username};
-            websocket.send(JSON.stringify(socketMessage));
-        };
-
         //退出浏览器时断开socket连接：同时向服务器发送下线
         window.onbeforeunload = function () {
             websocket.close();
@@ -321,24 +318,6 @@
             });
             return "退出将会断开连接";
         };
-
-        websocket.addEventListener('open', function () {
-            //检查App是否在线：在线的话则发送socket，告诉它web上线了，同时改标志和按钮
-            $.ajax({
-                url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
-                type:"GET",
-                dataType: 'json',
-                success:function (data) {
-                    //对面在线的情况
-                    if("ok" == data.ajaxState){
-                        document.getElementById("appState").className = "OnlineStateBox_Online";
-                        document.getElementById("appState").innerText = "在线";
-                        var socketMessage = {"messageType":"webIsOnline", "data":username};
-                        websocket.send(JSON.stringify(socketMessage));
-                    }
-                }
-            });
-        });
     </script>
 </head>
 <body>
@@ -364,6 +343,20 @@
             url:"http://118.25.180.193:8090/WebIsReady?username="+username,
             type:"GET",
             dataType: 'json',
+        });
+
+        //检查App是否在线：在线就改标志
+        $.ajax({
+            url:"http://118.25.180.193:8090/CheckAppIsOnline?username="+username,
+            type:"GET",
+            dataType: 'json',
+            success:function (data) {
+                //对面在线的情况
+                if("ok" == data.ajaxState){
+                    document.getElementById("appState").className = "OnlineStateBox_Online";
+                    document.getElementById("appState").innerText = "在线";
+                }
+            }
         });
     </script>
 </body>

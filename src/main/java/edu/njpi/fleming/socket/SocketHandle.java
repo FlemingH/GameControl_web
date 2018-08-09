@@ -23,19 +23,41 @@ public class SocketHandle {
     @OnOpen
     public void onOpen(@PathParam(value = "connType") String connType, @PathParam(value = "username")
                        String username, Session session){
-        //app建立连接
+
+        Gson gson = new Gson();
+        SocketMessage sendMessage = new SocketMessage();
+
+        //app建立连接-------------------------------------------------------------------------
         if ("app".equals(connType)){
 
             System.out.println(username+"-app-建立socket连接");
             appOnlineSocketMap.put(username,session);
 
-        //web建立连接
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("AppIsOnline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+
+        //web建立连接-------------------------------------------------------------------------
         } else if ("web".equals(connType)){
 
             System.out.println(username+"-web-建立socket连接");
             webOnlineSocketMap.put(username,session);
 
-        //control建立连接
+            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("webIsOnline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
+
+        //control建立连接---------------------------------------------------------------------
         } else if ("control".equals(connType)){
 
             System.out.println(username+"-control-建立socket连接");
@@ -47,19 +69,43 @@ public class SocketHandle {
     @OnClose
     public void onClose(@PathParam(value = "connType") String connType,
                         @PathParam(value = "username") String username){
-        //app断开连接
+
+        Gson gson = new Gson();
+        SocketMessage sendMessage = new SocketMessage();
+
+        //app断开连接-------------------------------------------------------------------------
         if ("app".equals(connType)){
+
+            //处理同AppIsOffline
+            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("AppIsOffline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
 
             System.out.println(username+"-app-断开socket连接");
             appOnlineSocketMap.remove(username);
 
-        //web断开连接
+        //web断开连接-------------------------------------------------------------------------
         } else if ("web".equals(connType)){
+
+            //处理同webIsOffline
+            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
+                if(username.equals(entry.getKey())){
+                    sendMessage.setMessageType("webIsOffline");
+                    sendMessage.setData("");
+                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
+                    break;
+                }
+            }
 
             System.out.println(username+"-web-断开socket连接");
             webOnlineSocketMap.remove(username);
 
-        //control断开连接
+        //control断开连接---------------------------------------------------------------------
         } else if ("control".equals(connType)){
 
             System.out.println(username+"-control-断开socket连接");
@@ -76,54 +122,6 @@ public class SocketHandle {
         String messageType = socketMessage.getMessageType();
 
         SocketMessage sendMessage = null;
-
-        //直接在webMap里寻找发送的地址；找到就发送
-        if("AppIsOnline".equals(messageType)){
-            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
-                if(username.equals(entry.getKey())){
-                    sendMessage.setMessageType("AppIsOnline");
-                    sendMessage.setData("");
-                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
-                    break;
-                }
-            }
-        }
-
-        //处理同AppIsOnline
-        if("AppIsOffline".equals(messageType)){
-            for(Map.Entry<String, Session> entry : webOnlineSocketMap.entrySet()){
-                if(username.equals(entry.getKey())){
-                    sendMessage.setMessageType("AppIsOffline");
-                    sendMessage.setData("");
-                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
-                    break;
-                }
-            }
-        }
-
-        //直接在appMap里寻找发送的地址；找到就发送
-        if("webIsOnline".equals(messageType)){
-            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
-                if(username.equals(entry.getKey())){
-                    sendMessage.setMessageType("webIsOnline");
-                    sendMessage.setData("");
-                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
-                    break;
-                }
-            }
-        }
-
-        //处理同webIsOnline
-        if("webIsOffline".equals(messageType)){
-            for (Map.Entry<String, Session> entry : appOnlineSocketMap.entrySet()){
-                if(username.equals(entry.getKey())){
-                    sendMessage.setMessageType("webIsOffline");
-                    sendMessage.setData("");
-                    entry.getValue().getAsyncRemote().sendText(gson.toJson(sendMessage));
-                    break;
-                }
-            }
-        }
 
         //前进键按下
         if("wButtonDown".equals(messageType)){
