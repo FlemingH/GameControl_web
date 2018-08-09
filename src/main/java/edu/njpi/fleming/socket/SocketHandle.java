@@ -126,7 +126,7 @@ public class SocketHandle {
         SocketMessage socketMessage = gson.fromJson(message, SocketMessage.class);
         String messageType = socketMessage.getMessageType();
 
-        SocketMessage sendMessage = null;
+        SocketMessage sendMessage = new SocketMessage();
 
         //前进键按下
         if("wButtonDown".equals(messageType)){
