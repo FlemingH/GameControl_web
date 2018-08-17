@@ -7,7 +7,7 @@ android Game-Control's server：To handle client's online and offline also recei
 ## 创作动机 Motivation
 在你想用PC游玩赛车类型游戏的时候，有没有对键盘操作感到厌倦？这个软件用手机代替你的键盘完成转向和加速操作，玩PC的赛车游戏现在也可以有在手机端一样的体验！<br>
 Hava you ever get tired of using keyboard when you play racing game on your PC? This software replace your keyboard with your phone 
-to do turning and accelerating, you can possess the feeling of moblie game when you play the PC's racing game.
+to do turning and acceleration, you can possess the feeling of moblie game when you play the PC's racing game.
 
 ## 如何安装 Installation 
 这个版本能用，但是并不是最好的解决方案，想要在你的电脑上运行，你的PC上需要一个可以发布这个工程的服务器，比如tomcat...你在玩游戏前使用8090端口发布，
