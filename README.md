@@ -1,6 +1,6 @@
 # GameControl_web
 
-## 大纲 Synopsis
+## 纲要 Synopsis
 android游戏控制器的服务器：用于处理客户端上下线、接收app的控制信息，转发给web客户端。<br>
 android Game-Control's server：To handle client's online and offline also receive the message from the app in order to forward to the web client。
 
