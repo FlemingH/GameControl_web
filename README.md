@@ -163,6 +163,10 @@ break;
 
 ---------------------------
 
+## 示例图片 Sample
+![example1](https://github.com/FlemingH/GameControl_web/blob/master/src/main/webapp/WEB-INF/web_example1.png)
+![example2](https://github.com/FlemingH/GameControl_web/blob/master/src/main/webapp/WEB-INF/web_example2.png)
+
 ## 参与者介绍 Contributors 
 [Fleming](https://github.com/FlemingH)-Initial work
 
